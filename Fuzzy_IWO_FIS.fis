@@ -1,0 +1,42 @@
+[System]
+Name='Fuzzy_IWO_FIS'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=4
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='itnormalized'
+Range=[0 1]
+NumMFs=3
+MF1='Low':'trapmf',[-0.326 -0.0304 0.194 0.4033]
+MF2='Medium':'trapmf',[0.1971 0.393 0.599 0.797]
+MF3='High':'trapmf',[0.607 0.808 1.06 1.38]
+
+[Input2]
+Name='BestCostnormalized'
+Range=[0 1]
+NumMFs=3
+MF1='Low':'trapmf',[-0.355 -0.0347 0.197 0.403439153439153]
+MF2='Medium':'trapmf',[0.202 0.396 0.607142857142857 0.803]
+MF3='High':'trapmf',[0.604497354497354 0.8 1.03 1.34]
+
+[Output1]
+Name='Sigma'
+Range=[0 0.3]
+NumMFs=3
+MF1='Low':'trapmf',[-0.00639 -0.00599 0.0001 0.102]
+MF2='Medium':'trapmf',[0.0694 0.116 0.181 0.225793650793651]
+MF3='High':'trapmf',[0.2 0.275 0.302 0.358]
+
+[Rules]
+3 3, 3 (1) : 1
+3 1, 1 (1) : 1
+1 3, 3 (1) : 1
+2 2, 2 (1) : 1
